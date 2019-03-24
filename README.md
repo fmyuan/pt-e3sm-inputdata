@@ -2,10 +2,10 @@
 A full set of E3SM input dataset for running offline Land Model (ELM) at 1 Point.
 
 ## WHY?
-The original E3SM inputdata is huge. For ELM developing and testing, it's not necessary to have the whole dataset. This dataset provides an example for running ELM (F cases) at 1 point.
+The original E3SM inputdata is huge. For ELM developing and testing, it's not necessary to have the whole dataset. This dataset provides an example for running ELM (I cases) at 1 point.
 
 ## How?
-### The F case for using this dataset is any supported compset, with resolution configuration of `--res CLM_USRDAT`.
+### The I case for using this dataset is any supported compset, with resolution configuration of `--res CLM_USRDAT`.
 
 ### After create_newcase, editing ```env_run.xml``` with the following:
 ```
