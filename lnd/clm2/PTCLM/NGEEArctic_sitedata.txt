@@ -1,0 +1,3 @@
+site_code,name,state,lon,lat,elev,startyear,endyear,alignyear,timezone
+AK-BEO,"Utgiagvik",AK,-156.604771,71.280008,7,2000,2015,1851,-8
+NE-LIN,"Lincoln",NE,-97.0,41.0,0,2000,2015,1851,-5
