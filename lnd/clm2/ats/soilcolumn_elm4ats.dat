@@ -1,0 +1,287 @@
+netcdf soilcolumn_elm4ats {
+dimensions:
+	len_string = 33 ;
+	len_line = 81 ;
+	four = 4 ;
+	len_name = 256 ;
+	time_step = UNLIMITED ; // (0 currently)
+	num_dim = 3 ;
+	num_nodes = 64 ;
+	num_elem = 15 ;
+	num_face = 76 ;
+	num_el_blk = 11 ;
+	num_fa_blk = 1 ;
+	num_side_sets = 3 ;
+	num_fa_in_blk1 = 76 ;
+	num_nod_per_fa1 = 304 ;
+	num_el_in_blk1 = 5 ;
+	num_fac_per_el1 = 30 ;
+	num_el_in_blk2 = 1 ;
+	num_fac_per_el2 = 6 ;
+	num_el_in_blk3 = 1 ;
+	num_fac_per_el3 = 6 ;
+	num_el_in_blk4 = 1 ;
+	num_fac_per_el4 = 6 ;
+	num_el_in_blk5 = 1 ;
+	num_fac_per_el5 = 6 ;
+	num_el_in_blk6 = 1 ;
+	num_fac_per_el6 = 6 ;
+	num_el_in_blk7 = 1 ;
+	num_fac_per_el7 = 6 ;
+	num_el_in_blk8 = 1 ;
+	num_fac_per_el8 = 6 ;
+	num_el_in_blk9 = 1 ;
+	num_fac_per_el9 = 6 ;
+	num_el_in_blk10 = 1 ;
+	num_fac_per_el10 = 6 ;
+	num_el_in_blk11 = 1 ;
+	num_fac_per_el11 = 6 ;
+	num_side_ss1 = 1 ;
+	num_side_ss2 = 1 ;
+	num_side_ss3 = 60 ;
+variables:
+	double time_whole(time_step) ;
+	int eb_status(num_el_blk) ;
+	int eb_prop1(num_el_blk) ;
+		eb_prop1:name = "ID" ;
+	int fa_status(num_fa_blk) ;
+	int fa_prop1(num_fa_blk) ;
+		fa_prop1:name = "ID" ;
+	int ss_status(num_side_sets) ;
+	int ss_prop1(num_side_sets) ;
+		ss_prop1:name = "ID" ;
+	double coordx(num_nodes) ;
+	double coordy(num_nodes) ;
+	double coordz(num_nodes) ;
+	char eb_names(num_el_blk, len_name) ;
+		eb_names:_FillValue = "" ;
+	char fa_names(num_fa_blk, len_name) ;
+		fa_names:_FillValue = "" ;
+	char ss_names(num_side_sets, len_name) ;
+		ss_names:_FillValue = "" ;
+	char coor_names(num_dim, len_name) ;
+		coor_names:_FillValue = "" ;
+	int fbconn1(num_nod_per_fa1) ;
+		fbconn1:elem_type = "NSIDED" ;
+	int fbepecnt1(num_fa_in_blk1) ;
+		fbepecnt1:entity_type1 = "NODE" ;
+		fbepecnt1:entity_type2 = "FACE" ;
+	int facconn1(num_fac_per_el1) ;
+		facconn1:elem_type = "NFACED" ;
+	int ebepecnt1(num_el_in_blk1) ;
+		ebepecnt1:entity_type1 = "FACE" ;
+		ebepecnt1:entity_type2 = "ELEM" ;
+	int facconn2(num_fac_per_el2) ;
+		facconn2:elem_type = "NFACED" ;
+	int ebepecnt2(num_el_in_blk2) ;
+		ebepecnt2:entity_type1 = "FACE" ;
+		ebepecnt2:entity_type2 = "ELEM" ;
+	int facconn3(num_fac_per_el3) ;
+		facconn3:elem_type = "NFACED" ;
+	int ebepecnt3(num_el_in_blk3) ;
+		ebepecnt3:entity_type1 = "FACE" ;
+		ebepecnt3:entity_type2 = "ELEM" ;
+	int facconn4(num_fac_per_el4) ;
+		facconn4:elem_type = "NFACED" ;
+	int ebepecnt4(num_el_in_blk4) ;
+		ebepecnt4:entity_type1 = "FACE" ;
+		ebepecnt4:entity_type2 = "ELEM" ;
+	int facconn5(num_fac_per_el5) ;
+		facconn5:elem_type = "NFACED" ;
+	int ebepecnt5(num_el_in_blk5) ;
+		ebepecnt5:entity_type1 = "FACE" ;
+		ebepecnt5:entity_type2 = "ELEM" ;
+	int facconn6(num_fac_per_el6) ;
+		facconn6:elem_type = "NFACED" ;
+	int ebepecnt6(num_el_in_blk6) ;
+		ebepecnt6:entity_type1 = "FACE" ;
+		ebepecnt6:entity_type2 = "ELEM" ;
+	int facconn7(num_fac_per_el7) ;
+		facconn7:elem_type = "NFACED" ;
+	int ebepecnt7(num_el_in_blk7) ;
+		ebepecnt7:entity_type1 = "FACE" ;
+		ebepecnt7:entity_type2 = "ELEM" ;
+	int facconn8(num_fac_per_el8) ;
+		facconn8:elem_type = "NFACED" ;
+	int ebepecnt8(num_el_in_blk8) ;
+		ebepecnt8:entity_type1 = "FACE" ;
+		ebepecnt8:entity_type2 = "ELEM" ;
+	int facconn9(num_fac_per_el9) ;
+		facconn9:elem_type = "NFACED" ;
+	int ebepecnt9(num_el_in_blk9) ;
+		ebepecnt9:entity_type1 = "FACE" ;
+		ebepecnt9:entity_type2 = "ELEM" ;
+	int facconn10(num_fac_per_el10) ;
+		facconn10:elem_type = "NFACED" ;
+	int ebepecnt10(num_el_in_blk10) ;
+		ebepecnt10:entity_type1 = "FACE" ;
+		ebepecnt10:entity_type2 = "ELEM" ;
+	int facconn11(num_fac_per_el11) ;
+		facconn11:elem_type = "NFACED" ;
+	int ebepecnt11(num_el_in_blk11) ;
+		ebepecnt11:entity_type1 = "FACE" ;
+		ebepecnt11:entity_type2 = "ELEM" ;
+	int elem_ss1(num_side_ss1) ;
+	int side_ss1(num_side_ss1) ;
+	int elem_ss2(num_side_ss2) ;
+	int side_ss2(num_side_ss2) ;
+	int elem_ss3(num_side_ss3) ;
+	int side_ss3(num_side_ss3) ;
+
+// global attributes:
+		:api_version = 7.03f ;
+		:version = 7.03f ;
+		:floating_point_word_size = 8 ;
+		:file_size = 1 ;
+		:maximum_name_length = 32 ;
+		:int64_status = 0 ;
+		:title = "soilcolumn_elm4ats.exo" ;
+data:
+
+ eb_status = 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ;
+
+ eb_prop1 = 1011, 1010, 1009, 1008, 1007, 1006, 1005, 1004, 1003, 1002, 1001 ;
+
+ fa_status = 1 ;
+
+ fa_prop1 = 1 ;
+
+ ss_status = 1, 1, 1 ;
+
+ ss_prop1 = 1, 2, 3 ;
+
+ coordx = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ;
+
+ coordy = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ;
+
+ coordz = 0, 13.8511521419636, 24.977302436168, 31.7256537141737, 
+    35.8187356667951, 38.3013153637765, 39.8070760651757, 40.7203660967648, 
+    41.2743045021335, 41.6102851285819, 41.8140676795924, 41.9376680446946, 
+    42.0126354556808, 42.0581054889233, 42.0856844581829, 42.1031972760992, 
+    0, 13.8511521419636, 24.977302436168, 31.7256537141737, 35.8187356667951, 
+    38.3013153637765, 39.8070760651757, 40.7203660967648, 41.2743045021335, 
+    41.6102851285819, 41.8140676795924, 41.9376680446946, 42.0126354556808, 
+    42.0581054889233, 42.0856844581829, 42.1031972760992, 0, 
+    13.8511521419636, 24.977302436168, 31.7256537141737, 35.8187356667951, 
+    38.3013153637765, 39.8070760651757, 40.7203660967648, 41.2743045021335, 
+    41.6102851285819, 41.8140676795924, 41.9376680446946, 42.0126354556808, 
+    42.0581054889233, 42.0856844581829, 42.1031972760992, 0, 
+    13.8511521419636, 24.977302436168, 31.7256537141737, 35.8187356667951, 
+    38.3013153637765, 39.8070760651757, 40.7203660967648, 41.2743045021335, 
+    41.6102851285819, 41.8140676795924, 41.9376680446946, 42.0126354556808, 
+    42.0581054889233, 42.0856844581829, 42.1031972760992 ;
+
+ eb_names =
+  "MATERIAL_ID_1011",
+  "MATERIAL_ID_1010",
+  "MATERIAL_ID_1009",
+  "MATERIAL_ID_1008",
+  "MATERIAL_ID_1007",
+  "MATERIAL_ID_1006",
+  "MATERIAL_ID_1005",
+  "MATERIAL_ID_1004",
+  "MATERIAL_ID_1003",
+  "MATERIAL_ID_1002",
+  "MATERIAL_ID_1001" ;
+
+ fa_names =
+  "" ;
+
+ ss_names =
+  "bottom",
+  "surface",
+  "external_sides" ;
+
+ coor_names =
+  "coordX",
+  "coordY",
+  "coordZ" ;
+
+ fbconn1 = 1, 17, 49, 33, 2, 18, 50, 34, 3, 19, 51, 35, 4, 20, 52, 36, 5, 21, 
+    53, 37, 6, 22, 54, 38, 7, 23, 55, 39, 8, 24, 56, 40, 9, 25, 57, 41, 10, 
+    26, 58, 42, 11, 27, 59, 43, 12, 28, 60, 44, 13, 29, 61, 45, 14, 30, 62, 
+    46, 15, 31, 63, 47, 16, 32, 64, 48, 1, 17, 18, 2, 2, 18, 19, 3, 3, 19, 
+    20, 4, 4, 20, 21, 5, 5, 21, 22, 6, 6, 22, 23, 7, 7, 23, 24, 8, 8, 24, 25, 
+    9, 9, 25, 26, 10, 10, 26, 27, 11, 11, 27, 28, 12, 12, 28, 29, 13, 13, 29, 
+    30, 14, 14, 30, 31, 15, 15, 31, 32, 16, 17, 49, 50, 18, 18, 50, 51, 19, 
+    19, 51, 52, 20, 20, 52, 53, 21, 21, 53, 54, 22, 22, 54, 55, 23, 23, 55, 
+    56, 24, 24, 56, 57, 25, 25, 57, 58, 26, 26, 58, 59, 27, 27, 59, 60, 28, 
+    28, 60, 61, 29, 29, 61, 62, 30, 30, 62, 63, 31, 31, 63, 64, 32, 33, 49, 
+    50, 34, 34, 50, 51, 35, 35, 51, 52, 36, 36, 52, 53, 37, 37, 53, 54, 38, 
+    38, 54, 55, 39, 39, 55, 56, 40, 40, 56, 57, 41, 41, 57, 58, 42, 42, 58, 
+    59, 43, 43, 59, 60, 44, 44, 60, 61, 45, 45, 61, 62, 46, 46, 62, 63, 47, 
+    47, 63, 64, 48, 1, 33, 34, 2, 2, 34, 35, 3, 3, 35, 36, 4, 4, 36, 37, 5, 
+    5, 37, 38, 6, 6, 38, 39, 7, 7, 39, 40, 8, 8, 40, 41, 9, 9, 41, 42, 10, 
+    10, 42, 43, 11, 11, 43, 44, 12, 12, 44, 45, 13, 13, 45, 46, 14, 14, 46, 
+    47, 15, 15, 47, 48, 16 ;
+
+ fbepecnt1 = 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+    4, 4, 4, 4, 4, 4, 4 ;
+
+ facconn1 = 1, 2, 17, 32, 47, 62, 2, 3, 18, 33, 48, 63, 3, 4, 19, 34, 49, 64, 
+    4, 5, 20, 35, 50, 65, 5, 6, 21, 36, 51, 66 ;
+
+ ebepecnt1 = 6, 6, 6, 6, 6 ;
+
+ facconn2 = 6, 7, 22, 37, 52, 67 ;
+
+ ebepecnt2 = 6 ;
+
+ facconn3 = 7, 8, 23, 38, 53, 68 ;
+
+ ebepecnt3 = 6 ;
+
+ facconn4 = 8, 9, 24, 39, 54, 69 ;
+
+ ebepecnt4 = 6 ;
+
+ facconn5 = 9, 10, 25, 40, 55, 70 ;
+
+ ebepecnt5 = 6 ;
+
+ facconn6 = 10, 11, 26, 41, 56, 71 ;
+
+ ebepecnt6 = 6 ;
+
+ facconn7 = 11, 12, 27, 42, 57, 72 ;
+
+ ebepecnt7 = 6 ;
+
+ facconn8 = 12, 13, 28, 43, 58, 73 ;
+
+ ebepecnt8 = 6 ;
+
+ facconn9 = 13, 14, 29, 44, 59, 74 ;
+
+ ebepecnt9 = 6 ;
+
+ facconn10 = 14, 15, 30, 45, 60, 75 ;
+
+ ebepecnt10 = 6 ;
+
+ facconn11 = 15, 16, 31, 46, 61, 76 ;
+
+ ebepecnt11 = 6 ;
+
+ elem_ss1 = 15 ;
+
+ side_ss1 = 2 ;
+
+ elem_ss2 = 1 ;
+
+ side_ss2 = 1 ;
+
+ elem_ss3 = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 
+    6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+    12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ;
+
+ side_ss3 = 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 
+    4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 
+    6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ;
+}
