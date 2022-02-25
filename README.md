@@ -26,11 +26,26 @@ In this example, the dataset point named as ```1x1pt_US-Brw``` (for DOE NGEE-Arc
              --id ELM_USRDAT_NAME --val 1x1pt_kougarok-GRID
 ```
 
+AND, editing **```user_nl_elm```**, by adding the following (Note: **YOUR_INPUTDATA_ROOT** must be editted as **actual path**):
+
+```
+ fsurdat = 'YOUR_INPUTDATA_ROOT/lnd/clm2/surfdata_map/surfdata_1x1pt_kougarok-GRID_simyr1850_c360x720_171002.nc'
+ nyears_ad_carbon_only = 25
+ spinup_mortality_factor = 10
+ metdata_type = 'gswp3v2'
+ metdata_bypass = 'YOUR_INPUTDATA_ROOT/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_NGEE-Grid/cpl_bypass_Kougarok-Grid'
+ aero_file = 'YOUR_INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
+ CO2_file = 'YOUR_INPUTDATA_ROOT/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
+
+```
+
+
+
 ### (3) The ICB case for run NGEE-Arctic Intensive Sites, using high-resolution (1kmx1km) GSWP3v2-daymet4 datasets:
 
 ### After create_newcase, editing ```env_run.xml``` with the following, i.e. pointing to new domain file:
 
-For NGEE-Arctic ```Kougarok``` site: 
+For NGEE-Arctic **```Kougarok```** site: 
 
 ```
              --id LND_DOMAIN_FILE --val domain.nc
@@ -38,7 +53,7 @@ For NGEE-Arctic ```Kougarok``` site:
              
 ```
 
-AND, editing ``` user_nl_elm ```, by adding the following ('YOUR_INPUTDATA_ROOT' must be editted as actual path):
+AND, editing **```user_nl_elm```**, by adding the following (**YOUR_INPUTDATA_ROOT** must be editted as **actual path**):
 
 ```
  fsurdat = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/TILE13868/cpl_bypass_full_KM64/surfdata.nc'
@@ -51,19 +66,19 @@ AND, editing ``` user_nl_elm ```, by adding the following ('YOUR_INPUTDATA_ROOT'
 
 ```
 
-For NGEE-Arctic ```Teller``` site: 
+For NGEE-Arctic **```Teller```** site, edit the 2 files above as following: 
 ```
 TILE13868/cpl_bypass_full_KM64 --> TILE13868/cpl_bypass_full_Teller
 ```
 
-For NGEE-Arctic ```Council``` site: 
+For NGEE-Arctic **```Council```** site, edit the 2 files above as following: 
 ```
 TILE13868/cpl_bypass_full_KM64 --> TILE13869/cpl_bypass_full_Council
 ```
 
-For NGEE-Arctic ```BEO``` site: 
+For NGEE-Arctic **```BEO```** site, edit the 2 files above as following: 
 ```
-TILE13868/cpl_bypass_full_KM64 --> TILE14412/cpl_bypass_full_beo
+TILE14412/cpl_bypass_full_KM64 --> TILE14412/cpl_bypass_full_beo
 ```
 
 
