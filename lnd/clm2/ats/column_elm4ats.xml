@@ -347,7 +347,7 @@
           <ParameterList name="layer 01" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 01" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.413" />
             <Parameter name="residual saturation [-]" type="double" value="0.095" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -355,7 +355,7 @@
           <ParameterList name="layer 02" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 02" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.413" />
             <Parameter name="residual saturation [-]" type="double" value="0.095" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -363,7 +363,7 @@
           <ParameterList name="layer 03" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 03" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.413" />
             <Parameter name="residual saturation [-]" type="double" value="0.095" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -371,7 +371,7 @@
           <ParameterList name="layer 04" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 04" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.400" />
             <Parameter name="residual saturation [-]" type="double" value="0.099" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -379,7 +379,7 @@
           <ParameterList name="layer 05" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 05" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.381" />
             <Parameter name="residual saturation [-]" type="double" value="0.106" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -387,7 +387,7 @@
           <ParameterList name="layer 06" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 06" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.007" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00007" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.351" />
             <Parameter name="residual saturation [-]" type="double" value="0.114" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -395,7 +395,7 @@
           <ParameterList name="layer 07" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 07" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.007" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00007" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.347" />
             <Parameter name="residual saturation [-]" type="double" value="0.114" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -403,7 +403,7 @@
           <ParameterList name="layer 08" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 08" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.006" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00006" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.375" />
             <Parameter name="residual saturation [-]" type="double" value="0.110" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -411,7 +411,7 @@
           <ParameterList name="layer 09" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 09" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.010" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00010" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.342" />
             <Parameter name="residual saturation [-]" type="double" value="0.102" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -419,7 +419,7 @@
           <ParameterList name="layer 10" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 10" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.011" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00011" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.341" />
             <Parameter name="residual saturation [-]" type="double" value="0.097" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
@@ -427,7 +427,7 @@
           <ParameterList name="soil parent materials" type="ParameterList">
             <Parameter name="region" type="string" value="soil layer 11_15" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.011" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00011" />
             <Parameter name="van Genuchten n [-]" type="double" value="1.341" />
             <Parameter name="residual saturation [-]" type="double" value="0.097" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
