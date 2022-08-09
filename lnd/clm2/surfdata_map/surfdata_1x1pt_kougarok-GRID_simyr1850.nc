@@ -1,1 +1,0 @@
-surfdata_1x1pt_kougarok-GRID_simyr1850_c360x720_171002.nc

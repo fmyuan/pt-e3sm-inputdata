@@ -1,1 +1,0 @@
-domain.lnd.1x1pt_US-Brw_navy_Grid.nc
