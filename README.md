@@ -29,12 +29,12 @@ In this example, the dataset point named as ```1x1pt_US-Brw``` (for DOE NGEE-Arc
 AND, editing **```user_nl_elm```**, by adding the following (Note: **YOUR_INPUTDATA_ROOT** must be editted as **actual path**):
 
 ```
- fsurdat = 'YOUR_INPUTDATA_ROOT/lnd/clm2/surfdata_map/surfdata_1x1pt_kougarok-GRID_simyr1850_c360x720_171002.nc'
+ fsurdat = 'YOUR_INPUTDATA_ROOT/lnd/clm2/surfdata_map/surfdata_1x1pt_kougarok-GRID_simyr1850_c360x720_c171002.nc'
  flanduse_timeseries = 'YOUR_INPUTDATA_ROOT/lnd/clm2/surfdata_map/landuse.timeseries_1x1pt_kougarok-GRID_simyr1850-2015_c360x720_c180423.nc'
  nyears_ad_carbon_only = 25
  spinup_mortality_factor = 10
  metdata_type = 'gswp3'
- metdata_bypass = 'YOUR_INPUTDATA_ROOT/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_NGEE-Grid/cpl_bypass_Kougarok-Grid'
+ metdata_bypass = 'YOUR_INPUTDATA_ROOT/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_NGEE-Grid/cpl_bypass_kougarok-Grid'
  aero_file = 'YOUR_INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
  CO2_file = 'YOUR_INPUTDATA_ROOT/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
 
@@ -50,19 +50,19 @@ For NGEE-Arctic **```Kougarok```** site:
 
 ```
              --id LND_DOMAIN_FILE --val domain.nc
-             --id LND_DOMAIN_PATH --val $DIN_LOC_ROOT/atm/datm7/GSWP3_daymet/TILE13868/cpl_bypass_full_KM64
+             --id LND_DOMAIN_PATH --val $DIN_LOC_ROOT/atm/datm7/GSWP3_daymet/cpl_bypass_kougarok
              
 ```
 
 AND, editing **```user_nl_elm```**, by adding the following (**YOUR_INPUTDATA_ROOT** must be editted as **actual path**):
 
 ```
- fsurdat = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/TILE13868/cpl_bypass_full_KM64/surfdata.nc'
- flanduse_timeseries = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/TILE13868/cpl_bypass_full_KM64/surfdata.pftdyn.nc'
+ fsurdat = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/cpl_bypass_kougarok/surfdata.nc'
+ flanduse_timeseries = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/cpl_bypass_kougarok/surfdata.pftdyn.nc'
  nyears_ad_carbon_only = 25
  spinup_mortality_factor = 10
  metdata_type = 'gswp3_daymet4'
- metdata_bypass = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/TILE13868/cpl_bypass_full_KM64'
+ metdata_bypass = 'YOUR_INPUTDATA_ROOT/atm/datm7/GSWP3_daymet/cpl_bypass_kougarok'
  aero_file = 'YOUR_INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
  CO2_file = 'YOUR_INPUTDATA_ROOT/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
 
@@ -70,17 +70,17 @@ AND, editing **```user_nl_elm```**, by adding the following (**YOUR_INPUTDATA_RO
 
 For NGEE-Arctic **```Teller```** site, edit the 2 files above as following: 
 ```
-TILE13868/cpl_bypass_full_KM64 --> TILE13868/cpl_bypass_full_Teller
+cpl_bypass_kougarok --> cpl_bypass_teller
 ```
 
 For NGEE-Arctic **```Council```** site, edit the 2 files above as following: 
 ```
-TILE13868/cpl_bypass_full_KM64 --> TILE13869/cpl_bypass_full_Council
+TILE13868/cpl_bypass_kougarok --> TILE13869/cpl_bypass_council
 ```
 
 For NGEE-Arctic **```BEO```** site, edit the 2 files above as following: 
 ```
-TILE14412/cpl_bypass_full_KM64 --> TILE14412/cpl_bypass_full_beo
+TILE14412/cpl_bypass_kougarok --> TILE14412/cpl_bypass_beo
 ```
 
 
