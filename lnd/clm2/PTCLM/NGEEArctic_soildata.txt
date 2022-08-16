@@ -1,0 +1,6 @@
+site_code,soil_depth,n_layers,layer_depth,layer_sand%,layer_clay%
+AK-BEO,-999,1,-999,50.0,25.0
+AK-BEOG,-999,1,-999,50.0,25.0
+AK-K64G,-999,1,-999,50.0,25.0
+AK-TLG,-999,1,-999,50.0,25.0
+AK-CLG,-999,1,-999,50.0,25.0
