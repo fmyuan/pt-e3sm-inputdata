@@ -26,7 +26,7 @@ In this example, the dataset point named as ```1x1pt_US-Brw``` (for DOE NGEE-Arc
              --id ELM_USRDAT_NAME --val 1x1pt_kougarok-GRID
 ```
 
-AND, editing **```user_nl_elm```**, by adding the following (Note: **YOUR_INPUTDATA_ROOT** must be editted as **actual path**):
+AND, editing **```user_nl_elm```**, by adding the following (Note: **YOUR_INPUTDATA_ROOT** must be editted as **actual full path**):
 
 ```
  fsurdat = 'YOUR_INPUTDATA_ROOT/lnd/clm2/surfdata_map/surfdata_1x1pt_kougarok-GRID_simyr1850_c360x720_c171002.nc'
@@ -75,12 +75,12 @@ cpl_bypass_kougarok --> cpl_bypass_teller
 
 For NGEE-Arctic **```Council```** site, edit the 2 files above as following: 
 ```
-TILE13868/cpl_bypass_kougarok --> TILE13869/cpl_bypass_council
+cpl_bypass_kougarok --> cpl_bypass_council
 ```
 
 For NGEE-Arctic **```BEO```** site, edit the 2 files above as following: 
 ```
-TILE14412/cpl_bypass_kougarok --> TILE14412/cpl_bypass_beo
+cpl_bypass_kougarok --> cpl_bypass_beo
 ```
 
 
