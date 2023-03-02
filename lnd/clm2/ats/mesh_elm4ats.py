@@ -16,11 +16,12 @@ except ImportError:
                                      'tools','meshing', 'meshing_ats'))
         import meshing_ats
 
-# set up the surface mesh, which is a single unit cell
+# set up the surface mesh, which is 3 single unit cell of 10 m x10 m
 # TODO - read-in latixy/longxy/topo from 'surfdata.nc' and do some lat/lon<->x/y conversion
 #    - ETC: this can be done with WW straightforwardly
-x = np.array([0.0, 1.0],'d')
-elv = np.array([0.0, 0.0], 'd')
+x = np.array([0.0, 10.0, 20.0, 30.0],'d')
+elv = np.array([0.5, 1.0, 1.25, 2.0], 'd')
+ng = x.size-1
 
 # using from_Transect extrudes the x,elv line in the y-direction to
 # create 1 cell in y.  This results in a single cell.
@@ -32,7 +33,6 @@ layer_types = []
 layer_data = []
 layer_ncells = []
 layer_mat_ids = []
-z = 0.0
 
 # -- standard soil layers from ELM's 15-layer column--
 #  variable layer thickness
@@ -48,9 +48,10 @@ for j in range(1,ncells-1):
 dzsoi[ncells-1] = zsoi[ncells-1]-zsoi[ncells-2]
 
 nlevsoi = 10
+z = 0.0
 for j in range(ncells):
     z = z - dzsoi[j]
-    print('j, z, dz, z_centroid, z_node_elm: ', j, z, dzsoi[j], z+dzsoi[j]/2.0, -zsoi[j])
+    print('j, z, z_centroid: ', j, z, z+dzsoi[j]/2.0)
     layer_types.append("constant")
     layer_data.append(dzsoi[j])
     layer_ncells.append(1)
@@ -68,6 +69,13 @@ m3 = meshing_ats.Mesh3D.extruded_Mesh2D(m2, layer_types,
                                         layer_data,                               # here 'layer_data' shall be 'z', depth of vertical vertices 
                                         layer_ncells, 
                                         layer_mat_ids)
-if os.path.exists('soilcolumn_elm4ats.exo'):
-    os.remove('soilcolumn_elm4ats.exo')
-m3.write_exodus("soilcolumn_elm4ats.exo")
+
+if ng==1:
+    if os.path.exists('soilcolumn_elm4ats.exo'):
+        os.remove('soilcolumn_elm4ats.exo')
+    m3.write_exodus("soilcolumn_elm4ats.exo")
+elif ng>1:
+    if os.path.exists('hillslope_elm4ats.exo'):
+        os.remove('hillslope_elm4ats.exo')
+    m3.write_exodus("hillslope_elm4ats.exo")
+    
