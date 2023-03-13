@@ -1,21 +1,19 @@
 <ParameterList name="Main" type="ParameterList">
+
   <ParameterList name="mesh" type="ParameterList">
     <ParameterList name="surface" type="ParameterList">
       <Parameter name="mesh type" type="string" value="surface" />
       <ParameterList name="surface parameters" type="ParameterList">
         <Parameter name="surface sideset name" type="string" value="surface" />
       </ParameterList>
-      <ParameterList name="surface">
-      </ParameterList>
     </ParameterList>
+
     <ParameterList name="domain" type="ParameterList">
-      
       <Parameter name="mesh type" type="string" value="read mesh file" />
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
- 
     </ParameterList>
   </ParameterList>
 
@@ -30,7 +28,7 @@
     <ParameterList name="bottom face" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="bottom" />
       </ParameterList>
@@ -58,11 +56,10 @@
       </ParameterList>
     </ParameterList>
 
-
     <ParameterList name="soil layer 01" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1001" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -70,7 +67,7 @@
     <ParameterList name="soil layer 02" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -78,7 +75,7 @@
     <ParameterList name="soil layer 03" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1003" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -86,7 +83,7 @@
     <ParameterList name="soil layer 04" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1004" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -94,7 +91,7 @@
     <ParameterList name="soil layer 05" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1005" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -102,7 +99,7 @@
     <ParameterList name="soil layer 06" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1006" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -110,7 +107,7 @@
     <ParameterList name="soil layer 07" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1007" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -118,7 +115,7 @@
     <ParameterList name="soil layer 08" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1008" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -126,7 +123,7 @@
     <ParameterList name="soil layer 09" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1009" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -134,7 +131,7 @@
     <ParameterList name="soil layer 10" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1010" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -142,13 +139,11 @@
     <ParameterList name="soil layer 11_15" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1011" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/uec/research/lsm/e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
     </ParameterList>
- 
-    
   </ParameterList>
 
   <ParameterList name="cycle driver" type="ParameterList">
@@ -169,6 +164,7 @@
       </ParameterList>
     </ParameterList>
   </ParameterList>
+
   <ParameterList name="PKs" type="ParameterList">
 
     <ParameterList name="Top level MPC" type="ParameterList">
@@ -187,9 +183,6 @@
           <Parameter name="nonlinear tolerance" type="double" value="1e-9" />
           <Parameter name="diverged tolerance" type="double" value="10000000000.0" />
           <Parameter name="limit iterations" type="int" value="100" />
-          <ParameterList name="verbose object" type="ParameterList">
-            <Parameter name="verbosity level" type="string" value="none" />
-          </ParameterList>
         </ParameterList>
         <ParameterList name="timestep controller smarter parameters" type="ParameterList">
           <Parameter name="max iterations" type="int" value="18" />
@@ -200,10 +193,6 @@
           <Parameter name="min time step" type="double" value="1e-10" />
           <Parameter name="growth wait after fail" type="int" value="2" />
           <Parameter name="count before increasing increase factor" type="int" value="2" />
-        </ParameterList>
-
-        <ParameterList name="verbose object" type="ParameterList">
-          <Parameter name="verbosity level" type="string" value="none" />
         </ParameterList>
       </ParameterList>
 
@@ -222,11 +211,6 @@
           <Parameter name="tolerance" type="double" value="0.0" />
         </ParameterList>
       </ParameterList>
-
-      <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="none" />
-      </ParameterList>
-
     </ParameterList>
 
     <ParameterList name="flow" type="ParameterList">
@@ -234,11 +218,9 @@
       <Parameter name="primary variable key" type="string" value="pressure" />
       <Parameter name="domain name" type="string" value="domain" />
       <Parameter name="source term" type="bool" value="true" />
-      <Parameter name="down-regulating source term" type="bool" value="true" />
-      <Parameter name="source key" type="string" value="source_sink" /> <!-- formerly 'water_source' -->
+      <Parameter name="source key" type="string" value="water_source" />
       <Parameter name="water source in meters" type="bool" value="false" />
       <Parameter name="source term is differentiable" type="bool" value="true" />
-      <Parameter name="initial time step" type="double" value="1800.0" />
       <Parameter name="permeability rescaling" type="double" value="10000000.0" />
       <Parameter name="relative permeability method" type="string" value="upwind with Darcy flux" />
 
@@ -262,7 +244,7 @@
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
 
       <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="none" />
+        <Parameter name="verbosity level" type="string" value="high" />
       </ParameterList>
 
     </ParameterList>
@@ -271,8 +253,9 @@
       <Parameter name="PK type" type="string" value="overland flow, pressure basis" />
       <Parameter name="primary variable key" type="string" value="surface-pressure" />
       <Parameter name="domain name" type="string" value="surface" />
+
       <Parameter name="source term" type="bool" value="true" />
-      <Parameter name="source key" type="string" value="surface-source_sink" /> <!-- formerly 'surface-water_source' -->
+      <Parameter name="source key" type="string" value="surface-water_source" />
       <Parameter name="water source in meters" type="bool" value="false" />
       <Parameter name="source term is differentiable" type="bool" value="false" />
       <Parameter name="initial time step" type="double" value="1800.0" />
@@ -287,12 +270,11 @@
             <Parameter name="regions" type="Array(string)" value="{surface outlet}" />
             <ParameterList name="boundary head" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.0001" />  <!-- barely no water on ground, but like soil saturated if any -->
+                <Parameter name="value" type="double" value="0." />
               </ParameterList>
             </ParameterList>
           </ParameterList>
         </ParameterList>
-      
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
@@ -300,47 +282,32 @@
       </ParameterList>
 
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
-
-      <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="none" />
-      </ParameterList>
-
     </ParameterList>
-    
-    <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="none" />
-    </ParameterList>
-
   </ParameterList>
 
   <ParameterList name="state" type="ParameterList">
     <ParameterList name="evaluators" type="ParameterList">
 
-      <ParameterList name="surface-source_sink" type="ParameterList">
+      <ParameterList name="surface-elevation" type="ParameterList">
+        <Parameter name="evaluator type" type="string" value="meshed elevation" />
+      </ParameterList>
+
+      <ParameterList name="surface-water_source" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
-        <Parameter name="evaluator dependencies" type="Array(string)" value="{surface-rain_snowmelt, surface-evaporation}" />
+        <Parameter name="dependencies" type="Array(string)" value="{surface-potential_infiltration, surface-evaporation}" />
         <Parameter name="surface-evaporation coefficient" type="double" value="-1" />
       </ParameterList>
-      <ParameterList name="surface-rain_snowmelt" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable constant" />
-        <Parameter name="value" type="double" value="0.100" />
-      </ParameterList>
+
       <ParameterList name="surface-evaporation" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="evaporation downregulation via soil resistance" />
-      </ParameterList>
-      <ParameterList name="surface-potential_evaporation" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable constant" />
-        <Parameter name="value" type="double" value="-0.095" />
       </ParameterList>
 
       <ParameterList name="surface-ponded_depth" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="ponded depth" />
-        <Parameter name="checkpoint" type="bool" value="true" />
       </ParameterList>
 
       <ParameterList name="surface-water_content" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="overland pressure water content" />
-        <Parameter name="checkpoint" type="bool" value="true" />
       </ParameterList>
 
       <ParameterList name="surface-mass_density_liquid" type="ParameterList">
@@ -372,7 +339,7 @@
         <Parameter name="value" type="double" value="1.0" />
       </ParameterList>
 
-      <ParameterList name="source_sink" type="ParameterList">
+      <ParameterList name="water_source" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
         <Parameter name="evaluator dependencies" type="Array(string)" value="{transpiration}" />
         <Parameter name="transpiration coefficient" type="double" value="-1" />
@@ -380,21 +347,7 @@
      
       <ParameterList name="transpiration" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="transpiration distribution via rooting depth" />
-        <Parameter name="potential transpiration key" type="string" value="canopy-potential_transpiration_mols" />
-      </ParameterList>
-
-      <ParameterList name="rooting_depth_fraction" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="rooting depth fraction" />
-      </ParameterList>
-
-      <ParameterList name="canopy-potential_transpiration_mols" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="multiplicative evaluator" />
-        <Parameter name="evaluator dependencies" type="Array(string)" value="{canopy-potential_transpiration,surface-molar_density_liquid}" />
-      </ParameterList>
-
-      <ParameterList name="canopy-potential_transpiration" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable constant" />
-        <Parameter name="value" type="double" value="0.0" />
+        <Parameter name="potential transpiration key" type="string" value="surface-potential_transpiration" />
       </ParameterList>
 
       <ParameterList name="surface-transpiration" type="ParameterList">
@@ -405,13 +358,11 @@
 
       <ParameterList name="water_content" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="richards water content" />
-        <Parameter name="checkpoint" type="bool" value="true" />
       </ParameterList>
 
       <ParameterList name="saturation_liquid" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="WRM" />
         <Parameter name="use surface rel perm" type="bool" value="true" />
-        <Parameter name="checkpoint" type="bool" value="true" />
         <ParameterList name="WRM parameters" type="ParameterList">
 
 <!--
@@ -622,7 +573,6 @@
         <Parameter name="evaluator type" type="string" value="capillary pressure, atmospheric gas over liquid" />
       </ParameterList>
 
-
       <ParameterList name="mass_density_liquid" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="independent variable constant" />
         <Parameter name="value" type="double" value="1000" />
@@ -638,7 +588,8 @@
         <Parameter name="value" type="double" value="0.00089" />
       </ParameterList>
 
-
+      <!-- NOTE: this is now set by the API -->
+      <!--
       <ParameterList name="base_porosity" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="independent variable" />
         <Parameter name="constant in time" type="bool" value="true" />
@@ -744,6 +695,7 @@
           </ParameterList>
         </ParameterList>
       </ParameterList>
+      -->
 
       <ParameterList name="porosity" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="compressible porosity" />
@@ -755,6 +707,8 @@
         </ParameterList>
       </ParameterList>
 
+      <!-- NOTE: this is now set by the API -->
+      <!--
       <ParameterList name="permeability" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="independent variable" />
         <Parameter name="constant in time" type="bool" value="true" />
@@ -859,30 +813,17 @@
               </ParameterList>
             </ParameterList>
           </ParameterList>
-        
         </ParameterList>
-        
       </ParameterList>
-
-      <ParameterList name="temperature" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="independent variable" />
+      -->
+      <ParameterList name="plant_wilting_factor" type="ParameterList">
+        <Parameter name="evaluator type" type="string" value="plant wilting factor" />
+      </ParameterList>
+      <ParameterList name="depth" type="ParameterList">
         <Parameter name="constant in time" type="bool" value="true" />
-        <ParameterList name="function" type="ParameterList">
-          <ParameterList name="domain" type="ParameterList">
-            <Parameter name="region" type="string" value="computational domain" />
-            <Parameter name="components" type="Array(string)" value="{cell,boundary_face}" />
-            <ParameterList name="function" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="298.15" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
+        <Parameter name="evaluator type" type="string" value="depth" />
       </ParameterList>
-
-      <ParameterList name="effective_pressure" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="effective_pressure" />
-      </ParameterList>
+      
     </ParameterList>
 
     <ParameterList name="initial conditions" type="ParameterList">
@@ -896,7 +837,7 @@
       </ParameterList>
 
       <ParameterList name="land cover types" type="ParameterList">
-        <ParameterList name="virtual ELM surface " type="ParameterList">
+        <ParameterList name="surface" type="ParameterList">
           <Parameter name="rooting depth max [m]" type="double" value=" 5" />
           <Parameter name="rooting profile alpha [-]" type="double" value="11" />
           <Parameter name="rooting profile beta [-]" type="double" value=" 2" />
@@ -919,11 +860,6 @@
           <Parameter name="Clapp and Hornberger b [-]" type="double" value=" 1" />
         </ParameterList>
       </ParameterList>
-      
-    </ParameterList>
-
-    <ParameterList name="verbose object" type="ParameterList">
-      <Parameter name="verbosity level" type="string" value="none" />
     </ParameterList>
 
   </ParameterList>
