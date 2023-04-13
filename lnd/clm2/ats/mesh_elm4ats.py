@@ -16,11 +16,11 @@ except ImportError:
                                      'tools','meshing', 'meshing_ats'))
         import meshing_ats
 
-# set up the surface mesh, which is 3 single unit cell of 10 m x10 m
+# set up the surface mesh, which is 5 single column of surface area of 10 m x10 m
 # TODO - read-in latixy/longxy/topo from 'surfdata.nc' and do some lat/lon<->x/y conversion
 #    - ETC: this can be done with WW straightforwardly
-x = np.array([0.0, 10.0, 20.0, 30.0],'d')
-elv = np.array([0.5, 1.0, 1.25, 2.0], 'd')
+x = np.array([0.0, 10.0, 20.0, 30.0, 40.0, 50.0],'d')
+elv = np.array([5.5, 4.0, 3.25, 3.0, 2.0, 1.0], 'd')
 ng = x.size-1
 
 # using from_Transect extrudes the x,elv line in the y-direction to
