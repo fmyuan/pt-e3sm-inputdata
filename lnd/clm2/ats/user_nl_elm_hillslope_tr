@@ -22,23 +22,20 @@
 ! Set maxpatch_glcmec    with GLC_NEC                            option
 ! Set glc_do_dynglacier  with GLC_TWO_WAY_COUPLING               env variable
 !----------------------------------------------------------------------------------
- fsurdat = '/Users/f9y/clm4_5_inputdata/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_Oakharbor-Grid/surfdata.nc'
+ fsurdat = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/surfdata_map/surfdata_5x1pt_Oakharbor-GRID_simyr1850_c360x720_c20230522.nc'
+ flanduse_timeseries = ''
  nyears_ad_carbon_only = 25
  spinup_mortality_factor = 10
- hist_empty_htapes = .true.
- hist_fincl1 = 'TLAI','TOTSOMC','PCO2','RH','TBOT','PBOT'
-! hist_fincl1 = 'QBOT'
-! hist_fincl1 = 'TBOT','PBOT','RH','RH_LEAF','QBOT','FLDS','FSDS','WIND','RAIN','SNOW','TLAI','TOTSOMC'
-! hist_nhtfrq = 1
-! hist_mfilt  = 17520
-!
+ hist_nhtfrq = -24, -24
+ hist_fincl2 = 'TBOT', 'PBOT','RH','RAIN','SNOW', 'TLAI', 'ZWT', 'SMP', 'SOILLIQ', 'SOILICE','SOIL_PRESSURE'
+ hist_mfilt = 365, 365
  metdata_type = 'gswp3'
- metdata_bypass = '/Users/f9y/clm4_5_inputdata/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_Oakharbor-Grid/cpl_bypass_full'
-!
- aero_file = '/Users/f9y/clm4_5_inputdata/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
- CO2_file = '/Users/f9y/clm4_5_inputdata/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
-!
- use_ats = .true.
- ats_inputdir = '/Users/f9y/clm4_5_inputdata/lnd/clm2/ats'
- ats_inputfile = 'column_elm4ats.xml'
+ metdata_bypass = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_Oakharbor-Grid/cpl_bypass_full'
+ aero_file = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
+ CO2_file = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
+ finidat = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/testcase_column_sp.elm.r.0601-01-01-00000.nc'
+
+ use_ats = .false.
+ ats_inputdir = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats'
+ ats_inputfile = 'hillslope_elm4ats.xml'
 
