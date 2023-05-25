@@ -26,14 +26,13 @@
  flanduse_timeseries = ''
  nyears_ad_carbon_only = 25
  spinup_mortality_factor = 10
- hist_nhtfrq = -24, -24
- hist_fincl2 = 'TBOT', 'PBOT','RH','RAIN','SNOW', 'TLAI', 'ZWT', 'SMP', 'SOILLIQ', 'SOILICE','SOIL_PRESSURE'
- hist_mfilt = 365, 365
+ hist_nhtfrq = -24
+ hist_mfilt = 365
  metdata_type = 'gswp3'
  metdata_bypass = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_Oakharbor-Grid/cpl_bypass_full'
  aero_file = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
  CO2_file = '/Users/f9y/mygithub/pt-e3sm-inputdata/atm/datm7/CO2/fco2_datm_1765-2007_c100614.nc'
- finidat = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/testcase_column_sp.elm.r.0601-01-01-00000.nc'
+ finidat = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/testcase_hillslope_sp.elm.r.0601-01-01-00000.nc'
 
  use_ats = .false.
  ats_inputdir = '/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats'
