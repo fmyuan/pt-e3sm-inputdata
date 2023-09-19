@@ -12,7 +12,7 @@
       
       <Parameter name="mesh type" type="string" value="read mesh file" />
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="/Users/80x/Software/ats_newstate/repos/E3SM/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
  
@@ -39,7 +39,7 @@
     <ParameterList name="bottom" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="/Users/80x/Software/ats_newstate/repos/E3SM/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo"  />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo"  />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -47,7 +47,7 @@
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="/Users/80x/Software/ats_newstate/repos/E3SM/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo"  />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/pt-e3sm-inputdata/lnd/clm2/ats/hillslope_elm4ats.exo"  />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
