@@ -265,7 +265,7 @@
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
 
       <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="high" />
+        <Parameter name="verbosity level" type="string" value="low" />
       </ParameterList>
 
 <!-- moved to state/evaluator/saturation_liquid     
@@ -324,7 +324,7 @@
       <Parameter name="debug cells" type="Array(int)" value="{0}" />
 
       <ParameterList name="verbose object" type="ParameterList">
-        <Parameter name="verbosity level" type="string" value="high" />
+        <Parameter name="verbosity level" type="string" value="low" />
       </ParameterList>
 
     </ParameterList>
@@ -395,7 +395,7 @@
 
       <ParameterList name="surface-water_source" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
-        <Parameter name="dependencies" type="Array(string)" value="{surface-potential_infiltration,surface-evaporation}" />
+        <Parameter name="dependencies" type="Array(string)" value="{surface-potential_infiltration,surface-potential_evaporation}" />
         <Parameter name="surface-evaporation coefficient" type="double" value="-1" />
       </ParameterList>
 
@@ -715,7 +715,7 @@
         <ParameterList name="compressible porosity model parameters" type="ParameterList">
           <ParameterList name="computational domain" type="ParameterList">
             <Parameter name="region" type="string" value="computational domain" />
-            <Parameter name="pore compressibility [Pa^-1]" type="double" value="1e-09" />
+            <Parameter name="pore compressibility [Pa^-1]" type="double" value="0e-09" />
           </ParameterList>
         </ParameterList>
       </ParameterList>
@@ -831,7 +831,7 @@
           <Parameter name="Beer's law extinction coefficient, shortwave [-]" type="double" value="0.6" />
           <Parameter name="Beer's law extinction coefficient, longwave [-]" type="double" value=" 5" />
           <Parameter name="snow transition depth [m]" type="double" value="0.02" />
-          <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
+          <Parameter name="dessicated zone thickness [m]" type="double" value="0." />
           <Parameter name="Clapp and Hornberger b [-]" type="double" value=" 1" />
         </ParameterList>
       </ParameterList>
