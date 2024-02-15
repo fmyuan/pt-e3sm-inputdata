@@ -1,0 +1,2 @@
+site_code,soil_depth,n_layers,layer_depth,layer_sand%,layer_clay%
+REFCASE,-999,1,-999,51.5,25.5
