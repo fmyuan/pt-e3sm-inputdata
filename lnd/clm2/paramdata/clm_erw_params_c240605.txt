@@ -1,6 +1,7 @@
 netcdf clm_erw_params_c240605 {
 dimensions:
 	nminerals = 9 ;
+    nminsecs = 2 ;
 	ncations = 5 ;
 	nks = 3 ;
 	string_length = 40 ;
@@ -9,6 +10,9 @@ variables:
 		minerals_name:units = "unitless" ;
 		minerals_name:long_name = "Description of minerals in a rock/soil" ;
 	int nminerals(nminerals) ;
+    char minsecs_name(nminsecs, string_length) ;
+        minsecs_name:units = "unitless" ;
+        minsecs_name:long_name = "Description of secondary minerals considered in soil mineral precipitions" ;
 	char cations_name(ncations, string_length) ;
 		cations_name:units = "unitless" ;
 		cations_name:long_name = "Description of cations in a rock/soil" ;
@@ -63,6 +67,31 @@ variables:
         primary_mass:unit = "g mol-1" ;
         primary_stoi_silica:coordinates = "nminerals" ;
         primary_mass:_FillValue = -9999. ;
+    double cations_mass(ncations) ;
+        primary_mass:long_name = "molar mass of the cations" ;
+        primary_mass:unit = "g mol-1" ;
+        primary_stoi_silica:coordinates = "ncations" ;
+        primary_mass:_FillValue = -9999. ;
+    int cations_valence(ncations) ;
+        primary_mass:long_name = "valence of the cations" ;
+        primary_mass:unit = "-" ;
+        primary_stoi_silica:coordinates = "ncations" ;
+        primary_mass:_FillValue = -9999 ;
+    double minsecs_mass(nminsecs) ;
+        minsecs_mass:long_name = "molar mass of the secondary minerals" ;
+        minsecs_mass:unit = "g mol-1" ;
+        minsecs_mass:coordinates = "nminsecs" ;
+        minsecs_mass:_FillValue = -9999. ;
+    double log_keq_minsecs(nminsecs) ;
+        log_keq_minsecs:units = "1/s" ;
+        log_keq_minsecs:long_name = "log10 of equilibrium constants for secondary mineral precipitation" ;
+        log_keq_minsecs:coordinates = "nminsecs" ;
+        log_keq_minsecs:_FillValue = -9999. ;
+    double alpha_minsecs(nminsecs) ;
+        alpha_minsecs:units = "1/s" ;
+        alpha_minsecs:long_name = "constant alpha for secondary mineral precipitation" ;
+        alpha_minsecs:coordinates = "nminsecs" ;
+        alpha_minsecs:_FillValue = -9999. ;
 
 // global attributes:
 		:title = "soil/rock powder weathering constants" ;
@@ -111,7 +140,7 @@ data:
   0, 0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, -0.572, 0, -0.556, 0, 0, 0, 1.000 ;
 
- log_keq_primary = 13.7605, 27.8626, 2.7645, 26.578, 32.9296, -9999, -9999, -9999, -9999 ;
+ log_keq_primary = -13.7605, -27.8626, -2.7645, -26.578, -32.9296, -9999, -9999, -9999, -9999 ;
 
  primary_stoi_proton = 2, 4, 4, 8, 4, 4, 2, 14, 1 ;
 
@@ -131,4 +160,19 @@ data:
  primary_stoi_h2o_out = 1, 2, 2, 4, 2, 2, 1, 8, 0 ;
 
  primary_mass = 116.159, 140.6931, 262.22, 278.21, 483.22, 216.5504, 100.3887, 812.3665, 100.0872 ;
+ 
+ cations_mass = 40.078, 24.305, 22.99, 39.0983, 26.98;
+
+ cations_valence = 2, 2, 1, 1, 3 ;
+
+ minsecs_name =
+  "Calcite_CaCO3                        ",
+  "Kaolinite_Al2Si2O5(OH)4              " ;
+
+ minsecs_mass = 100.0872, 258.1604;
+
+ log_keq_minsecs = -8.48, -6.8101;
+
+ alpha_minsecs = 9.0E-10, 6.4E-14;
+
 }
