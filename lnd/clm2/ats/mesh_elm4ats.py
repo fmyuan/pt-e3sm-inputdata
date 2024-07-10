@@ -16,14 +16,21 @@ except ImportError:
                                      'tools','meshing', 'meshing_ats'))
         import meshing_ats
 
+#single column of 1km
+x = np.array([0.0, 1000.0],'d')
+elv = np.array([5.5, 4.0], 'd')
+
 # set up the surface mesh, which is 5 single column of surface area of 10 m x10 m
 # TODO - read-in latixy/longxy/topo from 'surfdata.nc' and do some lat/lon<->x/y conversion
 #    - ETC: this can be done with WW straightforwardly
-#x = np.array([0.0, 10.0, 20.0, 30.0, 40.0, 50.0],'d')
-#elv = np.array([5.5, 4.0, 3.25, 3.0, 2.0, 1.0], 'd')
+"""
+x = np.array([0.0, 10.0, 20.0, 30.0, 40.0, 50.0],'d')
+elv = np.array([5.5, 4.0, 3.25, 3.0, 2.0, 1.0], 'd')
+"""
 
 # FME TEMPEST 2d transect mesh, which is 110 single column of surface area of 5mx5m
 # it could be done by read-in a .csv file.
+"""
 x = np.array([0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100, \
               105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200, \
               205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300, \
@@ -64,6 +71,7 @@ topo_class = np.array([3,3,3,3,3,3,3,3,3,3, \
                  2,2,2,2,2,2,2,2,2,2, \
                  2,2,2,2,2,2,2,2,2,2, \
                  2,1,1,0,0,0,0,0,0,0], 'i')
+"""
 
 ng = x.size-1
 
