@@ -1,0 +1,466 @@
+# Description: ELM CTC-CN reaction network
+# Rate constants estimated to show different processes
+
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_TRANSPORT
+      MODE GIRT
+    /
+  /
+
+END
+
+
+
+SUBSURFACE
+
+#=========================== useful transport parameters =======================
+SPECIFIED_VELOCITY
+  UNIFORM? YES
+  DATASET 0.d0 0.d0 0.d0
+END
+
+REFERENCE_LIQUID_DENSITY 1.d3
+
+
+#=========================== chemistry ========================================
+CHEMISTRY
+PRIMARY_SPECIES
+  #### NOTE: Beginning of auto-inserted primary species ####
+  NH4+
+  NO3-
+  CO2(aq)
+  O2(aq)
+  Tracer
+  Tracer2
+  H+
+  H2O
+  Cl-
+  Na+
+  #### NOTE: End of auto-inserted primary species ####
+/
+DECOUPLED_EQUILIBRIUM_REACTIONS
+  #### NOTE: Beginning of auto-inserted primary species ####
+  NH4+
+  NO3-
+  O2(aq)
+  H+
+  Cl-
+  Na+
+  #### NOTE: End of auto-inserted primary species ####
+/
+SECONDARY_SPECIES
+  #### NOTE: Beginning of auto-inserted secondary species ####
+  CO3--
+  HCO3-
+  OH-
+  #### NOTE: End of auto-inserted secondary species ####
+/
+MINERALS
+/
+MINERAL_KINETICS
+/
+IMMOBILE_SPECIES
+  #### NOTE: Beginning of auto-inserted immobile species ####
+  SOIL1
+  SOIL2
+  SOIL3
+  SOIL4
+  LITR1C
+  LITR1N
+  LITR2C
+  LITR2N
+  LITR3C
+  LITR3N
+  CWDC
+  CWDN
+  HRimm
+  Nimm
+  Nimp
+  Nmin
+  Plant_NH4_demand
+  Plant_NO3_demand
+  #### NOTE: End of auto-inserted immobile species ####
+/
+PASSIVE_GAS_SPECIES
+  #### NOTE: Beginning of auto-inserted gas species ####
+  #CO2(g)*
+  #O2(g)
+  #### NOTE: End of auto-inserted gas species ####
+/
+SORPTION
+  #### NOTE: Beginning of auto-inserted sorption sites ####
+/
+#### NOTE: End of auto-inserted sorption sites ####
+#### NOTE: Beginning of auto-inserted reactions ####
+
+  # Plant NH4 uptake
+  MICROBIAL_REACTION
+    REACTION 1.00000000e+00 NH4+  -> 1.00000000e+00 Tracer2 
+    RATE_CONSTANT       1.00000000e+00
+    MONOD
+      SPECIES_NAME        NH4+
+      HALF_SATURATION_CONSTANT 1.00000000e-04
+      THRESHOLD_CONCENTRATION 0.00000000e+00
+    /
+    BIOMASS
+      SPECIES_NAME Plant_NH4_demand
+      YIELD 0.00000000
+    /
+  /
+  
+  # Nitrification
+  MICROBIAL_REACTION
+    REACTION 1.00000000e+00 NH4+  -> 1.00000000e+00 NO3- 
+    RATE_CONSTANT       1.00000000e-09
+    MONOD
+      SPECIES_NAME        NH4+
+      HALF_SATURATION_CONSTANT 1.00000000e-05
+      THRESHOLD_CONCENTRATION 0.00000000e+00
+    /
+    ACTIVATION_ENERGY 50000.00000000
+  /
+  
+  # Plant NO3 uptake
+  MICROBIAL_REACTION
+    REACTION 1.00000000e+00 NO3-  -> 1.00000000e+00 Tracer 
+    RATE_CONSTANT       1.00000000e+00
+    MONOD
+      SPECIES_NAME        NO3-
+      HALF_SATURATION_CONSTANT 1.00000000e-04
+      THRESHOLD_CONCENTRATION 0.00000000e+00
+    /
+    BIOMASS
+      SPECIES_NAME Plant_NO3_demand
+      YIELD 0.00000000
+    /
+  /
+  
+  REACTION_SANDBOX
+    SOMDECOMP
+      POOLS
+        SOIL1               12.00000000
+        SOIL2               12.00000000
+        SOIL3               10.00000000
+        SOIL4               10.00000000
+        CWD                 # Variable C:N pool
+        LITR1               # Variable C:N pool
+        LITR2               # Variable C:N pool
+        LITR3               # Variable C:N pool
+      /
+      Abiotic_Factors
+        TEMPERATURE_RESPONSE_FUNCTION
+          Q10 1.50000000
+        /
+        MOISTURE_RESPONSE_FUNCTION
+          LOGTHETA
+        /
+      /
+    
+      # LITR2 decomp
+      REACTION
+        UPSTREAM_POOL       LITR2
+        DOWNSTREAM_POOL     SOIL2               4.50000000e-01
+        RATE_DECOMPOSITION  7.26000000e-02 1/d
+        MONOD
+          SPECIES_NAME        NH4+
+          HALF_SATURATION_CONSTANT 3.02500000e-04
+          THRESHOLD_CONCENTRATION 0.00000000e+00
+          POOL_NORMALIZED
+        /
+        MONOD
+          SPECIES_NAME        NO3-
+          HALF_SATURATION_CONSTANT 3.02500000e-04
+          THRESHOLD_CONCENTRATION 0.00000000e+00
+          POOL_NORMALIZED
+        /
+        MONOD
+          SPECIES_NAME        O2(aq)
+          HALF_SATURATION_CONSTANT 1.00000000e-04
+          THRESHOLD_CONCENTRATION 0.00000000e+00
+        /
+      /
+
+    # CWD fragmentation
+    REACTION
+      UPSTREAM_POOL       CWD
+      DOWNSTREAM_POOL     LITR2               7.60000000e-01
+      DOWNSTREAM_POOL     LITR3               2.40000000e-01
+      RATE_DECOMPOSITION  1.00000000e-04 1/d
+    /
+    # SOIL4 decomp
+    REACTION
+      UPSTREAM_POOL       SOIL4
+      RATE_DECOMPOSITION  1.00000000e-04 1/d
+      MONOD
+        SPECIES_NAME        O2(aq)
+        HALF_SATURATION_CONSTANT 1.00000000e-04
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+      /
+    /
+    # LITR1 decomp
+    REACTION
+      UPSTREAM_POOL       LITR1
+      DOWNSTREAM_POOL     SOIL1               6.10000000e-01
+      RATE_DECOMPOSITION  1.20400000e+00 1/d
+      MONOD
+        SPECIES_NAME        NH4+
+        HALF_SATURATION_CONSTANT 5.01666667e-03
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+        POOL_NORMALIZED
+      /
+      MONOD
+        SPECIES_NAME        NO3-
+        HALF_SATURATION_CONSTANT 5.01666667e-03
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+        POOL_NORMALIZED
+      /
+      MONOD
+        SPECIES_NAME        O2(aq)
+        HALF_SATURATION_CONSTANT 1.00000000e-04
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+      /
+    /
+    # SOIL3 decomp
+    REACTION
+      UPSTREAM_POOL       SOIL3
+      DOWNSTREAM_POOL     SOIL4               4.50000000e-01
+      RATE_DECOMPOSITION  1.41000000e-03 1/d
+      MONOD
+        SPECIES_NAME        O2(aq)
+        HALF_SATURATION_CONSTANT 1.00000000e-04
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+      /
+    /
+    # LITR3 decomp
+    REACTION
+      UPSTREAM_POOL       LITR3
+      DOWNSTREAM_POOL     SOIL3               7.10000000e-01
+      RATE_DECOMPOSITION  1.41000000e-02 1/d
+      MONOD
+        SPECIES_NAME        NH4+
+        HALF_SATURATION_CONSTANT 5.87500000e-05
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+        POOL_NORMALIZED
+      /
+      MONOD
+        SPECIES_NAME        NO3-
+        HALF_SATURATION_CONSTANT 5.87500000e-05
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+        POOL_NORMALIZED
+      /
+      MONOD
+        SPECIES_NAME        O2(aq)
+        HALF_SATURATION_CONSTANT 1.00000000e-04
+        THRESHOLD_CONCENTRATION 0.00000000e+00
+      /
+    /
+      # SOIL2 decomp
+      REACTION
+        UPSTREAM_POOL       SOIL2
+        DOWNSTREAM_POOL     SOIL3               5.40000000e-01
+        RATE_DECOMPOSITION  1.41000000e-02 1/d
+        MONOD
+          SPECIES_NAME        O2(aq)
+          HALF_SATURATION_CONSTANT 1.00000000e-04
+          THRESHOLD_CONCENTRATION 0.00000000e+00
+        /
+      /
+      # SOIL1 decomp
+      REACTION
+        UPSTREAM_POOL       SOIL1
+        DOWNSTREAM_POOL     SOIL2               7.20000000e-01
+        RATE_DECOMPOSITION  7.26000000e-02 1/d
+        MONOD
+          SPECIES_NAME        O2(aq)
+          HALF_SATURATION_CONSTANT 1.00000000e-04
+          THRESHOLD_CONCENTRATION 0.00000000e+00
+        /
+      /
+    
+    CO2_SPECIES_NAME CO2(aq)
+    O2_SPECIES_NAME O2(aq)
+    /
+  /
+  #### NOTE: End of auto-inserted reactions ####
+  LOG_FORMULATION
+  TRUNCATE_CONCENTRATION 1.00000000e-80
+  DATABASE ./hanford_tai.dat
+  MAX_RESIDUAL_TOLERANCE 1.00000000e-12
+  MAX_RELATIVE_CHANGE_TOLERANCE 1.00000000e-10
+
+
+
+  OUTPUT
+    !PH
+    TOTAL
+    FREE_ION
+    PRIMARY_SPECIES
+    SECONDARY_SPECIES
+    GASES
+    MINERALS
+    IMMOBILE
+    TOTAL_SORBED
+  /
+END
+
+#=========================== transport constraints ============================
+CONSTRAINT initial
+  IMMOBILE
+    #### NOTE: Beginning of auto-inserted immobile species ####
+    SOIL1                8.32570144e-32
+    SOIL2                8.32570144e-32
+    SOIL3                8.32570144e-32
+    SOIL4                8.32570144e-32
+    LITR1C              8.32570144e+01
+    LITR1N              3.56972021e+00
+    LITR2C              8.32570144e-32
+    LITR2N              3.56972021e-33
+    LITR3C              8.32570144e-32
+    LITR3N              3.56972021e-33
+    CWDC                8.32570144e-32
+    CWDN                3.56972021e-33
+    HRimm                1.00000000e-30
+    Nimm                 1.00000000e-30
+    Nimp                 1.00000000e-30
+    Nmin                 1.00000000e-30
+    Plant_NH4_demand     1.00000000e-30
+    Plant_NO3_demand     1.00000000e-30
+    #### NOTE: End of auto-inserted immobile species ####
+  /
+  CONCENTRATIONS
+    #### NOTE: Beginning of auto-inserted concentration constraints ####
+    NH4+                1.00000000e-30 T
+    NO3-                1.00000000e-30 T
+    CO2(aq)             400e-6 T !G CO2(g)*
+    O2(aq)              0.2 T ! O2(g)
+    Tracer              1.00000000e-30 T
+    Tracer2             1.00000000e-30 T
+    H+                  6.0 P
+    H2O                 55.0 T
+    Cl-                 1.56133834e-11 T
+    Na+                 1.56133834e-11 T
+    #### NOTE: End of auto-inserted concentration constraints ####
+  /
+  MINERALS
+  /
+
+  
+END
+
+#=========================== solver options ===================================
+NUMERICAL_METHODS TRANSPORT
+! For single point sim, SOLVER DIRECT and other options commented out seems to work the best 
+LINEAR_SOLVER
+  SOLVER DIRECT
+  !SOLVER ITERATIVE     ! default: ITERATIVE or KRYLOV: KSP_TYPE of BCGS and PC_TYPE of BJACOBI, if not modified below
+  !PC_TYPE JACOBI       ! default (iterative): BJACOBI. 
+  !KSP_TYPE fgmres      ! default: BCGS. NOT much difference 
+END
+
+NEWTON_SOLVER
+  ATOL 1.d-20
+  RTOL 1.d-15
+  STOL 1.d-15
+  ITOL 1.d-15
+  !NUMERICAL_JACOBIAN
+END
+END
+
+#=========================== discretization ===================================
+GRID
+  TYPE structured
+  ORIGIN 0.d0 0.d0 0.d0
+  NXYZ 1 1 1
+  DXYZ
+    1.d0
+    1.d0
+    1.d0
+  /
+END
+
+#=========================== fluid properties =================================
+FLUID_PROPERTY
+  PHASE LIQUID
+  DIFFUSION_COEFFICIENT 0.d-9
+END
+
+FLUID_PROPERTY
+  PHASE gas
+  DIFFUSION_COEFFICIENT 0.000d-05
+END
+
+#=========================== material properties ==============================
+MATERIAL_PROPERTY soil1
+  ID 1
+  POROSITY 0.25d0
+  TORTUOSITY 1.d0
+  SATURATION_FUNCTION default
+END
+
+#=========================== output options ===================================
+OUTPUT
+  PERIODIC_OBSERVATION TIME 1.0 d
+  #SCREEN PERIODIC 10
+  PERIODIC TIMESTEP 1
+  FORMAT HDF5
+  #SCREEN OFF # Should turn off PFLOTRAN (and alquimia) writing to text output
+  VARIABLES
+    POROSITY
+    /
+  FORMAT TECPLOT POINT
+  MASS_BALANCE_FILE
+    PERIODIC TIMESTEP 1
+  /
+END
+
+#=========================== times ============================================
+TIME
+  FINAL_TIME 1.d1 d
+  INITIAL_TIMESTEP_SIZE 1.0d-1 h
+  MAXIMUM_TIMESTEP_SIZE 5.d-1 h
+END
+
+#=========================== regions ==========================================
+REGION all
+  COORDINATES
+    0.d0 0.d0 0.d0
+    1.d0 1.d0 1.d0
+  /
+END
+
+REGION obs_pt
+  COORDINATE 0.5 0.5 0.5
+END
+
+#=========================== observation points ===============================
+OBSERVATION
+  REGION obs_pt
+END
+
+#=========================== transport conditions =============================
+TRANSPORT_CONDITION initial
+  TYPE DIRICHLET
+  CONSTRAINT_LIST
+    0.d0 initial
+  /
+END
+
+
+
+#=========================== condition couplers ===============================
+# initial condition
+INITIAL_CONDITION
+  TRANSPORT_CONDITION initial
+  REGION all
+END
+
+#=========================== stratigraphy couplers ============================
+STRATA
+  REGION all
+  MATERIAL soil1
+END
+
+
+END_SUBSURFACE
