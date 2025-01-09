@@ -35,7 +35,7 @@
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="../soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -211,6 +211,7 @@
     </ParameterList>
 
     <ParameterList name="flow" type="ParameterList">
+      <Parameter name="PK type" type="string" value="richards flow" />
       <Parameter name="primary variable key" type="string" value="pressure" />
       <Parameter name="domain name" type="string" value="domain" />
       <Parameter name="source term" type="bool" value="true" />
@@ -224,75 +225,17 @@
         <Parameter name="discretization primary" type="string" value="mfd: optimized for sparsity" />
       </ParameterList>
 
-      <ParameterList name="time integrator" type="ParameterList">
-        <Parameter name="extrapolate initial guess" type="bool" value="true" />
-        <Parameter name="solver type" type="string" value="nka_bt_ats" />
-        <Parameter name="timestep controller type" type="string" value="from file" />
-        <ParameterList name="nka_bt_ats parameters" type="ParameterList">
-          <Parameter name="nka lag iterations" type="int" value="2" />
-          <Parameter name="max backtrack steps" type="int" value="5" />
-          <Parameter name="backtrack lag" type="int" value="0" />
-          <Parameter name="backtrack factor" type="double" value="0.5" />
-          <Parameter name="backtrack tolerance" type="double" value="0.0001" />
-          <Parameter name="nonlinear tolerance" type="double" value="1e-08" />
-          <Parameter name="diverged tolerance" type="double" value="10000000000" />
-          <Parameter name="limit iterations" type="int" value="100" />
-          <ParameterList name="verbose object" type="ParameterList">
-            <Parameter name="verbosity level" type="string" value="high" />
-          </ParameterList>
-        </ParameterList>
-        <ParameterList name="verbose object" type="ParameterList">
-          <Parameter name="verbosity level" type="string" value="high" />
-        </ParameterList>
-        <ParameterList name="timestep controller smarter parameters" type="ParameterList">
-          <Parameter name="max iterations" type="int" value="18" />
-          <Parameter name="min iterations" type="int" value="10" />
-          <Parameter name="time step reduction factor" type="double" value="0.5" />
-          <Parameter name="time step increase factor" type="double" value="1.25" />
-          <Parameter name="max time step" type="double" value="63115.2" />
-          <Parameter name="min time step" type="double" value="1e-10" />
-          <Parameter name="growth wait after fail" type="int" value="2" />
-          <Parameter name="count before increasing increase factor" type="int" value="2" />
-        </ParameterList>
-        <ParameterList name="timestep controller from file parameters" type="ParameterList">
-          <Parameter name="file name" type="string" value="../data/richards-infiltration_then_seepage_mfd_dts.h5" />
-          <Parameter name="initial time step [s]" type="double" value=" 1" />
-        </ParameterList>
-      </ParameterList>
-
-      <ParameterList name="diffusion" type="ParameterList">
-        <Parameter name="discretization primary" type="string" value="mfd: default" />
-      </ParameterList>
-
-      <ParameterList name="inverse" type="ParameterList">
-        <Parameter name="preconditioning method" type="string" value="boomer amg" />
-        <Parameter name="iterative method" type="string" value="gmres" />
-        <ParameterList name="boomer amg parameters" type="ParameterList">
-          <Parameter name="cycle applications" type="int" value="1" />
-          <Parameter name="smoother sweeps" type="int" value="3" />
-          <Parameter name="strong threshold" type="double" value="0.25" />
-          <Parameter name="tolerance" type="double" value=" 0" />
-          <Parameter name="relaxation type" type="int" value="6" />
-          <Parameter name="verbosity" type="int" value="0" />
-        </ParameterList>
-        <ParameterList name="verbose object" type="ParameterList">
-          <Parameter name="verbosity level" type="string" value="high" />
-        </ParameterList>
-        <ParameterList name="gmres parameters" type="ParameterList">
-          <Parameter name="preconditioning strategy" type="string" value="left" />
-          <Parameter name="error tolerance" type="double" value="1e-12" />
-          <Parameter name="convergence criteria" type="Array(string)" value="{relative residual,make one iteration}" />
-          <Parameter name="maximum number of iteration" type="int" value="80" />
-        </ParameterList>
+      <ParameterList name="diffusion preconditioner" type="ParameterList">
+        <Parameter name="Newton correction" type="string" value="approximate Jacobian" />
       </ParameterList>
 
       <ParameterList name="boundary conditions" type="ParameterList">
         <ParameterList name="seepage face pressure">
           <ParameterList name="bottom">
             <Parameter name="regions" type="Array(string)" value="{bottom}" />
-            <ParameterList name="outward water flux" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.0" />
+            <ParameterList name="boundary pressure">
+              <ParameterList name="function-constant">
+                <Parameter name="value" type="double" value="400000" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -340,28 +283,10 @@
   </ParameterList>
 
   <ParameterList name="state" type="ParameterList">
-
     <ParameterList name="evaluators" type="ParameterList">
       <ParameterList name="surface-potential_transpiration" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
         <Parameter name="dependencies" type="Array(string)" value="{surface-potential_transpiration_mps}" />
-
-        <!-- for testing without coupling with ELM
-        <Parameter name="evaluator type" type="string" value="independent variable" />
-        <Parameter name="constant in time" type="bool" value="true" />
-        <ParameterList name="function" type="ParameterList">
-          <ParameterList name="domain" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-            <Parameter name="component" type="string" value="cell" />
-            <ParameterList name="function" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.001" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
-        -->
-
       </ParameterList>
       <ParameterList name="transpiration" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="transpiration distribution, rooting depth" />
@@ -374,44 +299,10 @@
       <ParameterList name="surface-potential_infiltration" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
         <Parameter name="dependencies" type="Array(string)" value="{surface-potential_infiltration_mps}" />
-
-        <!-- for testing  without coupling with ELM
-        <Parameter name="evaluator type" type="string" value="independent variable" />
-        <Parameter name="constant in time" type="bool" value="true" />
-        <ParameterList name="function" type="ParameterList">
-          <ParameterList name="domain" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-            <Parameter name="component" type="string" value="cell" />
-            <ParameterList name="function" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.001" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
-        -->
-
       </ParameterList>
       <ParameterList name="surface-potential_evaporation" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator" />
         <Parameter name="dependencies" type="Array(string)" value="{surface-potential_evaporation_mps}" />
-
-        <!-- for testing  without coupling with ELM
-        <Parameter name="evaluator type" type="string" value="independent variable" />
-        <Parameter name="constant in time" type="bool" value="true" />
-        <ParameterList name="function" type="ParameterList">
-          <ParameterList name="domain" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-            <Parameter name="component" type="string" value="cell" />
-            <ParameterList name="function" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.001" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
-        -->
-
       </ParameterList>
       <ParameterList name="surface-evaporation" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="evaporation downregulation, soil resistance" />
