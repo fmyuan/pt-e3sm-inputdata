@@ -289,7 +289,7 @@
         <Parameter name="dependencies" type="Array(string)" value="{surface-potential_transpiration_mps}" />
       </ParameterList>
       <ParameterList name="transpiration" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="transpiration distribution, rooting depth" />
+        <Parameter name="evaluator type" type="string" value="transpiration distribution, relative permeability" />
         <Parameter name="potential transpiration key" type="string" value="surface-potential_transpiration" />
       </ParameterList>
       <ParameterList name="surface-total_transpiration" type="ParameterList">
@@ -309,14 +309,6 @@
       </ParameterList>
       <ParameterList name="root_fraction" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="root fraction" />
-      </ParameterList>
-      <ParameterList name="plant_wilting_factor" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="plant wilting factor" />
-        <ParameterList name="plant_wilting_factor parameters" type="ParameterList">
-          <ParameterList name="surface" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-          </ParameterList>
-        </ParameterList>
       </ParameterList>
       <ParameterList name="depth" type="ParameterList">
         <Parameter name="constant in time" type="bool" value="true" />
@@ -422,10 +414,12 @@
           </ParameterList>
         </ParameterList>
       </ParameterList>
-      <ParameterList name="saturation_liquid" type="ParameterList">
+
+      <ParameterList name="saturation_gas" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="water retention model" />
         <Parameter name="model parameters" type="string" value="WRM parameters" />
       </ParameterList>
+
       <ParameterList name="porosity" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="compressible porosity" />
         <ParameterList name="compressible porosity model parameters" type="ParameterList">
@@ -536,8 +530,7 @@
           <Parameter name="rooting depth max [m]" type="double" value=" 5" />
           <Parameter name="rooting profile alpha [-]" type="double" value="11" />
           <Parameter name="rooting profile beta [-]" type="double" value=" 2" />
-          <Parameter name="capillary pressure at fully closed stomata [Pa]" type="double" value="275000" />
-          <Parameter name="capillary pressure at fully open stomata [Pa]" type="double" value="7400" />
+          <Parameter name="maximum xylem capillary pressure [Pa]" type="double" value="2550000" />
           <Parameter name="leaf on time [doy]" type="double" value="-1" />
           <Parameter name="leaf off time [doy]" type="double" value="-1" />
           <Parameter name="Priestley-Taylor alpha of snow [-]" type="double" value="1.26" />
