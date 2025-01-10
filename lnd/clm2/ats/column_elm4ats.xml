@@ -6,10 +6,11 @@
         <Parameter name="surface sideset name" type="string" value="surface" />
       </ParameterList>
     </ParameterList>
+
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="mesh type" type="string" value="read mesh file" />
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
     </ParameterList>
@@ -27,7 +28,7 @@
     <ParameterList name="bottom" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -43,7 +44,7 @@
     <ParameterList name="soil layer 01" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1001" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -51,7 +52,7 @@
     <ParameterList name="soil layer 02" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -59,7 +60,7 @@
     <ParameterList name="soil layer 03" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1003" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -67,7 +68,7 @@
     <ParameterList name="soil layer 04" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1004" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -75,7 +76,7 @@
     <ParameterList name="soil layer 05" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1005" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -83,7 +84,7 @@
     <ParameterList name="soil layer 06" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1006" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -91,7 +92,7 @@
     <ParameterList name="soil layer 07" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1007" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -99,7 +100,7 @@
     <ParameterList name="soil layer 08" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1008" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -107,7 +108,7 @@
     <ParameterList name="soil layer 09" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1009" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -115,7 +116,7 @@
     <ParameterList name="soil layer 10" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1010" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -123,11 +124,12 @@
     <ParameterList name="soil layer 11_15" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1011" />
-        <Parameter name="file" type="string" value="/home/ecoon/research/elm_ats/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/project_e3sm/pt-e3sm-inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
     </ParameterList>
+
   </ParameterList>
 
   <ParameterList name="coordinator" type="ParameterList">
@@ -289,7 +291,7 @@
         <Parameter name="dependencies" type="Array(string)" value="{surface-potential_transpiration_mps}" />
       </ParameterList>
       <ParameterList name="transpiration" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="transpiration distribution, rooting depth" />
+        <Parameter name="evaluator type" type="string" value="transpiration distribution, relative permeability" />
         <Parameter name="potential transpiration key" type="string" value="surface-potential_transpiration" />
       </ParameterList>
       <ParameterList name="surface-total_transpiration" type="ParameterList">
@@ -309,14 +311,6 @@
       </ParameterList>
       <ParameterList name="root_fraction" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="root fraction" />
-      </ParameterList>
-      <ParameterList name="plant_wilting_factor" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="plant wilting factor" />
-        <ParameterList name="plant_wilting_factor parameters" type="ParameterList">
-          <ParameterList name="surface" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-          </ParameterList>
-        </ParameterList>
       </ParameterList>
       <ParameterList name="depth" type="ParameterList">
         <Parameter name="constant in time" type="bool" value="true" />
@@ -422,10 +416,12 @@
           </ParameterList>
         </ParameterList>
       </ParameterList>
-      <ParameterList name="saturation_liquid" type="ParameterList">
+
+      <ParameterList name="saturation_gas" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="water retention model" />
         <Parameter name="model parameters" type="string" value="WRM parameters" />
       </ParameterList>
+
       <ParameterList name="porosity" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="compressible porosity" />
         <ParameterList name="compressible porosity model parameters" type="ParameterList">
@@ -536,8 +532,7 @@
           <Parameter name="rooting depth max [m]" type="double" value=" 5" />
           <Parameter name="rooting profile alpha [-]" type="double" value="11" />
           <Parameter name="rooting profile beta [-]" type="double" value=" 2" />
-          <Parameter name="capillary pressure at fully closed stomata [Pa]" type="double" value="275000" />
-          <Parameter name="capillary pressure at fully open stomata [Pa]" type="double" value="7400" />
+          <Parameter name="maximum xylem capillary pressure [Pa]" type="double" value="2550000" />
           <Parameter name="leaf on time [doy]" type="double" value="-1" />
           <Parameter name="leaf off time [doy]" type="double" value="-1" />
           <Parameter name="Priestley-Taylor alpha of snow [-]" type="double" value="1.26" />
