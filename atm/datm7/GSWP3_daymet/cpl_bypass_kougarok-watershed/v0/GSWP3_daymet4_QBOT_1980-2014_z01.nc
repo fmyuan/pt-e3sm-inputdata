@@ -1,1 +1,0 @@
-GSWP3_daymet4_QBOT_1980-2014_z01_adj.nc
