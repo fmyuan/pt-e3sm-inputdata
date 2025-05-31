@@ -7,5 +7,6 @@ tar -zxvf clmforc.Li_2012_climo1995-2011.T62.lnfm_Total_c140423.nc.tar.gz
 cd ../
 tar -zxvf atm_forcing.datm7.Qian.T62.c080727_smallvilleIA.tar.gz
 ln -sf atm_forcing.datm7.Qian.T62.c080727_smallvilleIA atm_forcing.datm7.Qian.T62.c080727
-ln -sf domain.T62.050609_smallvilleIA.nc domain.T62.050609.nc 
-
+ln -sf domain.T62.050609_smallvilleIA.nc domain.T62.050609.nc
+tar -zxvf atm_forcing.datm7.GSWP3.0.5d.v1.c170516_kougarok-Grid.tar.gz
+ln -sf atm_forcing.datm7.GSWP3.0.5d.v1.c170516_kougarok-Grid atm_forcing.datm7.GSWP3.0.5d.v1.c170516
