@@ -1,0 +1,5 @@
+site_code,name,state,lon,lat,elev,startyear,endyear,alignyear,timezone
+US-ARM,"USARM","",-97.4888,36.6058,314,2000,2015,1851,-6
+BR-Sa1,"BRSa1","",-54.9589,-2.8567,88,2000,2015,1851,-6
+US-Ha1,"USHa1","",-72.1715,42.5378,314,2000,2015,1851,-5
+US-Syv,"USSyv","",-89.3477,46.2420,88,2000,2015,1851,-6
