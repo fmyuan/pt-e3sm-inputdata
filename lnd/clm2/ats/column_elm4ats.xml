@@ -9,7 +9,7 @@
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="mesh type" type="string" value="read mesh file"/>
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
     </ParameterList>
@@ -27,7 +27,7 @@
     <ParameterList name="bottom" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -35,7 +35,7 @@
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -43,7 +43,7 @@
     <ParameterList name="soil layer 01" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1001" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -51,7 +51,7 @@
     <ParameterList name="soil layer 02" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -59,7 +59,7 @@
     <ParameterList name="soil layer 03" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1003" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -67,7 +67,7 @@
     <ParameterList name="soil layer 04" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1004" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -75,7 +75,7 @@
     <ParameterList name="soil layer 05" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1005" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -83,7 +83,7 @@
     <ParameterList name="soil layer 06" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1006" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -91,7 +91,7 @@
     <ParameterList name="soil layer 07" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1007" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -99,7 +99,7 @@
     <ParameterList name="soil layer 08" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1008" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -107,7 +107,7 @@
     <ParameterList name="soil layer 09" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1009" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -115,7 +115,7 @@
     <ParameterList name="soil layer 10" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1010" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -123,7 +123,7 @@
     <ParameterList name="soil layer 11_15" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1011" />
-        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn_elm4ats.exo" />
+        <Parameter name="file" type="string" value="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/ats/soilcolumn30_elm4ats.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="Cell" />
       </ParameterList>
@@ -337,7 +337,7 @@
       </ParameterList>
       <ParameterList name="water_content" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="richards water content"/>
-        <Parameter name="debug cells" type="Array(int)" value="{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}"/>
+        <!-- Parameter name="debug cells" type="Array(int)" value="{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}"/ -->
       </ParameterList>
 
       <!-- this becomes runoff generation qflx_surf in ELM, divide by both surface area and density to get m per second -->
@@ -488,6 +488,7 @@
         <Parameter name="evaluator type" type="string" value="relative permeability, water retention model"/>
         <Parameter name="model parameters" type="string" value="WRM parameters"/>
         <Parameter name="use surface rel perm" type="bool" value="true"/>
+        <!-- Parameter name="debug cells" type="Array(int)" value="{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}"/ -->        
       </ParameterList>
     </ParameterList>
 
