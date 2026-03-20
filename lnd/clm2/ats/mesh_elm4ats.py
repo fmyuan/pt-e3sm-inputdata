@@ -86,11 +86,88 @@ layer_data = []
 layer_ncells = []
 layer_mat_ids = []
 
+#--- #------ ELM soil column layer thickness and depths (nodes and interfaces) ------#
+def soilcolumn(more_vertlayers=False, nlevgrnd=15, zeroindex='C'):
+    import math
+    
+    # a few ELM constants relevant to soil column
+    scalez      = 0.025   # Soil layer thickness discretization (m)
+    thick_equal = 0.2
+    nlev_equalspace   = 15
+    toplev_equalspace =  6
+
+    '''
+    The following are python scripts for algorithm in elm/src/main/initVerticalMod.F90: L112-156
+    '''
+    # Soil layers and interfaces (assumed same for all non-lake patches)
+    # "0" refers to soil surface and "nlevbed" refers to the bottom of model soil
+
+    # node depths.
+
+    # NOTE: These elm soil-layer nodes are within a layer, but NOT the centroids if varying layerthickness.
+    # the middle-point of two adjacent nodes are called 'interfaces' (layer's up/bottom)
+    # In ELM, fluxes are occured btw adjacent nodes. but 'mass' are within a layer volume.
+
+    # For convenience, index 0 in all np array is for 'surface' so that layer real indices are matching with ELM's
+
+    if ( more_vertlayers ):
+        # replace standard exponential grid with a grid that starts out exponential, 
+        # then has several evenly spaced layers, then finishes off exponential. 
+        # this allows the upper soil to behave as standard, but then continues 
+        # with higher resolution to a deeper depth, so that, for example, permafrost
+        # dynamics are not lost due to an inability to resolve temperature, moisture, 
+        # and biogeochemical dynamics at the base of the active layer
+
+        nlevgrnd    =  15 + nlev_equalspace
+
+        zsoi = np.empty(nlevgrnd+1); zsoi[:] = 0.0
+        for j in range(1, toplev_equalspace+1):
+            zsoi[j] = scalez*(math.exp(0.5*(j-0.5))-1.0)
+
+        for j in range(toplev_equalspace+1,toplev_equalspace + nlev_equalspace+1):
+            zsoi[j] = zsoi[j-1] + thick_equal
+
+        for j in range(toplev_equalspace + nlev_equalspace +1, nlevgrnd+1):
+            zsoi[j] = scalez*(math.exp(0.5*((j - nlev_equalspace)-0.5))-1.0) + nlev_equalspace * thick_equal
+
+    else:
+
+        zsoi = np.empty(nlevgrnd+1); zsoi[:] = 0.0
+        for j in range(1, nlevgrnd+1):
+            zsoi[j] = scalez*(math.exp(0.5*(j-0.5))-1.0)
+
+    # thickness b/n two interfaces (i.e. ATS z-coordinated-nodes)
+    dzsoi = np.empty(nlevgrnd+1); dzsoi[:] = 0.0
+    dzsoi[1] = 0.5*(zsoi[1]+zsoi[2])
+    for j in range(2,nlevgrnd):
+        dzsoi[j]= 0.5*(zsoi[j+1]-zsoi[j-1])
+    dzsoi[nlevgrnd] = zsoi[nlevgrnd]-zsoi[nlevgrnd-1]
+
+    # interface, i.e. ATS z-coordinated-node depths
+    zisoi = np.empty(nlevgrnd+1); zisoi[:] = 0.0
+    zisoi[0] = 0.0
+    for j in range(1, nlevgrnd):
+        zisoi[j] = 0.5*(zsoi[j]+zsoi[j+1])
+    zisoi[nlevgrnd] = zsoi[nlevgrnd] + 0.5*dzsoi[nlevgrnd]
+
+    if zeroindex=='C':
+        # indexing from 0 (C-style)
+        return zisoi, dzsoi[1:], zsoi[1:]
+    else:
+        # indexing from 1 (Fortran-style) as in ELM. NOTE: 0 indexing for surface
+        return zisoi, dzsoi, zsoi
+#------------------------------------------------------------------------------------------
+#
 # -- standard soil layers from ELM's 15-layer column--
 #  variable layer thickness
 #  15 layers
 #  mat-id for each top 10 layer and 1 for rest 5 layers (called bedrock in ELM)
-ncells = 15
+#ncells = 15
+#zi, dzsoi, zsoi = soilcolumn(nlevgrnd=15)
+zi, dzsoi, zsoi = soilcolumn(more_vertlayers=True)
+ncells = dzsoi.size
+
+'''
 jidx = np.array(range(ncells))+1 
 zsoi = 0.025*(np.exp(0.5*(jidx-0.5))-1.0)       #ELM soil layer node depths - somewhere inside a layer but not centroid
 dzsoi= np.zeros_like(zsoi)
@@ -98,6 +175,9 @@ dzsoi[0] = 0.5*(zsoi[0]+zsoi[1])                #thickness b/n two vertical inte
 for j in range(1,ncells-1):
     dzsoi[j]= 0.5*(zsoi[j+1]-zsoi[j-1])
 dzsoi[ncells-1] = zsoi[ncells-1]-zsoi[ncells-2]
+'''
+
+# soil material id assignment
 
 nlevsoi = 10
 z = 0.0
@@ -122,12 +202,16 @@ m3 = meshing_ats.Mesh3D.extruded_Mesh2D(m2, layer_types,
                                         layer_ncells, 
                                         layer_mat_ids)
 
+
+
 if ng==1:
-    if os.path.exists('soilcolumn_elm4ats.exo'):
-        os.remove('soilcolumn_elm4ats.exo')
-    m3.write_exodus("soilcolumn_elm4ats.exo")
+    m3_file = 'soilcolumn'+str(ncells)+'_elm4ats.exo'
+    if os.path.exists(m3_file):
+        os.remove(m3_file)
+    m3.write_exodus(m3_file)
 elif ng>1:
-    if os.path.exists('hillslope_elm4ats_tempest2d.exo'):
-        os.remove('hillslope_elm4ats_tempest2d.exo')
-    m3.write_exodus("hillslope_elm4ats_tempest2d.exo")
+    m3_file = 'hillslope_elm4ats_tempest2d.exo'
+    if os.path.exists(m3_file):
+        os.remove(m3_file)
+    m3.write_exodus(m3_file)
     
