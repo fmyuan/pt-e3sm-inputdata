@@ -1,0 +1,81 @@
+#!/bin/bash
+
+set -e
+
+# Created 2026-08-11 09:36:37
+
+E3SM_SRC_DIR="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/E3SM"
+E3SM_INPUTDATA="/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata"
+
+CIME_OUT_DIR="/Users/f9y/project_e3sm/"
+
+CASEDIR="${CIME_OUT_DIR}/cases/elmats_hillslope-ICB1850CNRDCTCBC"
+
+"${E3SM_SRC_DIR}"/cime/scripts/create_newcase -case "${CASEDIR}" -mach mymac -compiler gnu -mpilib mpich -res ELM_USRDAT -compset ICB1850CNRDCTCBC
+
+cd "${CASEDIR}"
+
+./xmlchange DIN_LOC_ROOT=${E3SM_INPUTDATA}
+
+./xmlchange --append --id ELM_BLDNML_OPTS --val "-bgc_spinup on"
+
+./xmlchange ATM_DOMAIN_PATH=${E3SM_INPUTDATA}/share/domains/domain.clm
+
+./xmlchange LND_DOMAIN_PATH=${E3SM_INPUTDATA}/share/domains/domain.clm
+
+./xmlchange ATM_DOMAIN_FILE=domain.lnd.110x1pt_US-GC_TransTEMPEST_c20230901.nc
+
+./xmlchange LND_DOMAIN_FILE=domain.lnd.110x1pt_US-GC_TransTEMPEST_c20230901.nc
+
+./xmlchange NTASKS=4
+
+./xmlchange STOP_N=200
+
+./xmlchange STOP_OPTION=nyears
+
+./xmlchange ATM_NCPL=24
+
+echo "
+&elm_inparm
+ fsurdat = '${E3SM_INPUTDATA}/lnd/clm2/surfdata_map/surfdata_110x1pt_US-GC_TransTEMPEST_c20230901.nc'
+ flanduse_timeseries = ' '
+ 
+ metdata_type = 'gswp3'
+ metdata_bypass = '${E3SM_INPUTDATA}/atm/datm7/atm_forcing.datm7.GSWP3.0.5d.v2.c180716_US-GC03-Grid/cpl_bypass_full'
+ aero_file = '${E3SM_INPUTDATA}/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_monthly_1850_mean_1.9x2.5_c090421.nc'
+ CO2_file = '${E3SM_INPUTDATA}/atm/datm7/CO2/fco2_datm_ssp585_simyr_1765-2501_CMIP6_c200324.nc'
+ stream_fldfilename_popdens = '${E3SM_INPUTDATA}/lnd/clm2/firedata/clmforc.Li_2012_hdm_0.5x0.5_AVHRR_simyr1850-2010_c130401.nc'
+ stream_fldfilename_ndep = '${E3SM_INPUTDATA}/lnd/clm2/ndepdata/fndep_elm_cbgc_exp_simyr1849-2101_1.9x2.5_c190103.nc'
+
+ nyears_ad_carbon_only = 25
+ spinup_mortality_factor = 10
+ finidat = ''
+
+ const_climate_hist=.true.
+
+ domain_decomp_type = 'ats'
+ use_ats = .true.
+ use_ats_IC = .true.
+ ats_inputdir = '${E3SM_INPUTDATA}/lnd/clm2/ats'
+ 
+ ats_inputfile = 'hillslope_elm4ats_tempest2d.xml'
+
+ hist_empty_htapes = .true.
+ hist_nhtfrq = -24, 1
+ hist_mfilt = 365, 2920
+ hist_fincl1 = 'TLAI', 'TOTSOMC', 'ZWT', 'TSOI', 'SOILLIQ', 'SOILICE'
+ hist_fincl2 = 'TBOT', 'PBOT','RH','RAIN','SNOW','EFF_POROSITY','H2OSOI','SOILICE','SOILPSI','SMP','BTRAN','FPSN'
+
+">>user_nl_elm
+
+./case.setup
+
+./case.build --clean-all
+
+echo 'string(APPEND CPPDEFS " -DCPL_BYPASS")'>>cmake_macros/universal.cmake
+
+./case.build
+
+./case.submit
+
+
