@@ -4,7 +4,10 @@ import sys,os
 import numpy as np
 from copy import deepcopy
 
-# This is the standard path for ATS's source directory    
+# This is the standard path for ATS's source directory
+os.environ['ATS_SRC_DIR']='/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/amanzi/src/physics/ats'
+os.environ['SEACAS_DIR']='/Users/f9y/micromamba/amanzi-ats-tools/seacas-exodus'
+  
 try:
     import meshing_ats
 except ImportError:
@@ -17,7 +20,7 @@ except ImportError:
         import meshing_ats
 
 #single column of 1km
-x = np.array([0.0, 1000.0],'d')
+x = np.array([0.0, 10.0],'d')
 elv = np.array([5.5, 4.0], 'd')
 
 # set up the surface mesh, which is 5 single column of surface area of 10 m x10 m
