@@ -1,4 +1,36 @@
+#!/bin/bash
 
+set -e
+
+# Created 2026-08-11 09:36:37
+
+CASEDIR="/Users/f9y/project_e3sm/cases/elmats_hillslope-ICB1850CNRDCTCBC"
+
+/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/E3SM/cime/scripts/create_newcase -case "${CASEDIR}" -mach mymac -compiler gnu -mpilib mpich -res ELM_USRDAT -compset ICB1850CNRDCTCBC
+
+cd "${CASEDIR}"
+
+./xmlchange DIN_LOC_ROOT=/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata
+
+./xmlchange --append --id ELM_BLDNML_OPTS --val "-bgc_spinup on"
+
+./xmlchange ATM_DOMAIN_PATH=/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/share/domains/domain.clm
+
+./xmlchange LND_DOMAIN_PATH=/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/share/domains/domain.clm
+
+./xmlchange ATM_DOMAIN_FILE=domain.lnd.110x1pt_US-GC_TransTEMPEST_c20230901.nc
+
+./xmlchange LND_DOMAIN_FILE=domain.lnd.110x1pt_US-GC_TransTEMPEST_c20230901.nc
+
+./xmlchange NTASKS=4
+
+./xmlchange STOP_N=200
+
+./xmlchange STOP_OPTION=nyears
+
+./xmlchange ATM_NCPL=24
+
+echo "
 &elm_inparm
  fsurdat = '/Users/f9y/mygithub/ATS_REPOS/COMPASS-ELM-ATS/inputdata/lnd/clm2/surfdata_map/surfdata_110x1pt_US-GC_TransTEMPEST_c20230901.nc'
  flanduse_timeseries = ' '
@@ -29,5 +61,16 @@
  hist_fincl1 = 'TLAI', 'TOTSOMC', 'ZWT', 'TSOI', 'SOILLIQ', 'SOILICE'
  hist_fincl2 = 'TBOT', 'PBOT','RH','RAIN','SNOW','EFF_POROSITY','H2OSOI','SOILICE','SOILPSI','SMP','BTRAN','FPSN'
 
+">>user_nl_elm
+
+./case.setup
+
+./case.build --clean-all
+
+echo 'string(APPEND CPPDEFS " -DCPL_BYPASS")'>>cmake_macros/universal.cmake
+
+./case.build
+
+./case.submit
 
 
