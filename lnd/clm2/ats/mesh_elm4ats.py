@@ -19,15 +19,15 @@ except ImportError:
                                      'tools','meshing', 'meshing_ats'))
         import meshing_ats
 
-#single column of 1km
-x = np.array([0.0, 10.0],'d')
+#single column of 0.1x0.1km
+x = np.array([0.0, 100.0],'d')
 elv = np.array([5.5, 4.0], 'd')
 
 # set up the surface mesh, which is 5 single column of surface area of 10 m x10 m
 # TODO - read-in latixy/longxy/topo from 'surfdata.nc' and do some lat/lon<->x/y conversion
 #    - ETC: this can be done with WW straightforwardly
 """
-x = np.array([0.0, 10.0, 20.0, 30.0, 40.0, 50.0],'d')
+x = np.array([0.0, 100.0, 200.0, 300.0, 400.0, 500.0],'d')
 elv = np.array([5.5, 4.0, 3.25, 3.0, 2.0, 1.0], 'd')
 """
 
@@ -80,7 +80,7 @@ ng = x.size-1
 
 # using from_Transect extrudes the x,elv line in the y-direction to
 # create 1 cell in y.  This results in a single cell.
-m2 = meshing_ats.Mesh2D.from_Transect(x,elv, width=5.0)
+m2 = meshing_ats.Mesh2D.from_Transect(x,elv, width=100.0)
 
 # layer extrusion
 # -- data structures needed for extrusion
